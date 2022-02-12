@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Здесь могла быть ваша реклама</title>
+   <script type = "text/javascript" src = "https://code.jquery.com/jquery-3.6.0.js">
+   </script>
+</head>
+<body>
+
+<div class="layout">
+  <div class="product">
+
+    <div class="product__preview">
+<div  class="product__preview-info">
+  <img onmouseover="gotcha.src='tshirt1.webp'" src="tshirt1.webp" width="100px" height="auto" title="Ну, и что?!" alt="рубашка в профиль">
+  <img onmouseover="gotcha.src='tshirt2.webp'" src="tshirt2.webp" width="100px" height="auto" title="Ну, и что?!" alt="рубашка сзади">
+  <img onmouseover="gotcha.src='tshirt3.webp'" src="tshirt3.webp" width="100px" height="auto" title="Ну, и что?!" alt="Покрой" >
+</div>
+    </div>
+
+    <div class="pocket">
+      <img id="gotcha" onmouseout="this.src='tshirt1.webp'" src="tshirt1.webp" width="500px" height="auto" title="Ну, и что?!" alt="рубашка в профиль">
+    </div>
+    <div class="product__description">
+
+    <h2 class="product__title">рубашка medicine</h2>
+    <div class="product__categories">
+        <a href="#">Рубашки Medicine</a>
+        <a href="#">Вcе модели Medicine</a>
+        <a href="#">Рубашки</a>
+    </div>
+    <div class="product__price">
+      <div class="product__price-actual">
+        <span class="product__price-old price">2 699 &#8381;</span>
+        <span class="product__price-current price">
+        2 499
+        </span>
+      </div>
+      <div class="product__price-discount">
+        <span class="product__discount-value price">2 227 &#8381;</span>
+        <span class="product__discount-text">- с промокодом</span>
+      </div>
+    </div>
+    <div class="product__info">
+      <div class="product__info-item">
+      &#10004;
+      В наличии в магазине <a href="#">Lamoda</a>
+      </div>
+        <div class="product__info-item">
+          &#9951;
+          Бесплатная доставка
+      </div>
+    </div>
+    <div class= "product__actions">
+      <button id="sold" class="custom-btn custom-btn--blue">Купить</button>
+      <button class="custom-btn">в избранное</button>
+      <span id="money"></span>
+      <script>
+	$( document ).ready(function(){
+	  $("#sold").click(function(){ // задаем функцию при нажатиии на элемент <button></button>
+	   $("#money").append("В корзину добавлено " + $("#pascalina").val()+" товаров"); // добавляем содержимое всех элементов в документ
+	  });
+	});
+		</script>
+    </div>
+    <div  class="number" data-step="1" data-min="1" data-max="100">
+<input id="pascalina" class="number-text" type="text" name="count" value="1">
+<a href="#" class="number-minus">−</a>
+<a href="#" class="number-plus">+</a>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('body').on('click', '.number-minus, .number-plus', function(){
+		var $row = $(this).closest('.number');
+		var $input = $row.find('.number-text');
+		var step = $row.data('step');
+		var val = parseFloat($input.val());
+		if ($(this).hasClass('number-minus')) {
+			val -= step;
+		} else {
+			val += step;
+		}
+		$input.val(val);
+		$input.change();
+		return false;
+	});
+
+	$('body').on('change', '.number-text', function(){
+		var $input = $(this);
+		var $row = $input.closest('.number');
+		var step = $row.data('step');
+		var min = parseInt($row.data('min'));
+		var max = parseInt($row.data('max'));
+		var val = parseFloat($input.val());
+		if (isNaN(val)) {
+			val = step;
+		} else if (min && val < min) {
+			val = min;
+		} else if (max && val > max) {
+			val = max;
+		}
+		$input.val(val);
+	});
+});
+
+</script>
+</div>
+    <div class="product__text">
+      Рубашка Medicine выполнена из вискозной ткани с клетчатым узором.<br>
+      Детали: прямой крой, отложной воротник, планка и манжеты на<br> пуговицах;
+      карман на груди.
+    </div>
+    <div class="product__share">
+      <span class="product__share-title">Поделиться:</span>
+    <div class="product__share-list">
+        <div class="social vk">
+    <a href="#" target="_blank"><i class="fa fa-vk fa-2x"></i></a>
+        </div>
+        <div class="social google-pluse">
+    <a href="#" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a>
+        </div>
+        <div class="social facebook">
+    <a href="#" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+        </div>
+        <div class="social twitter">
+    <a href="#" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+        </div>
+    </div>
+      <span class="product__share-count">123</span>
+    </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
